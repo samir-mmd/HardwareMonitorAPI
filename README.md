@@ -1,5 +1,6 @@
 # Hardware Monitor API
-![image](https://github.com/user-attachments/assets/1761f3c5-e0e1-477e-a92a-3adaac249b40)
+![image](https://github.com/user-attachments/assets/5b8b2b8c-7ef0-487d-84fb-1e619be4ba38)
+
 
 ## Overview
 **Hardware Monitor API** is a .NET Core Web API designed to run on your computer at startup as a background process. It provides real-time hardware information accessible from any device with a web browser within the same local network. This API is perfect for repurposing old devices, like mobile phones or tablets, into dedicated hardware monitoring screens.
