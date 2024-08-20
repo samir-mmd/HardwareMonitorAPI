@@ -17,6 +17,8 @@ namespace HWMonitorWebApi.Services
         public string? SystemFan2 { get; set; }
         public string? GPUFan1 { get; set; }
         public string? GPUFan2 { get; set; }
+        public string? Gram { get; set; }
+        public string? RAM  { get; set; }
     }
 
     public class UpdateVisitor : IVisitor
@@ -60,6 +62,7 @@ namespace HWMonitorWebApi.Services
             computer.IsCpuEnabled = true;
             computer.IsMotherboardEnabled = true;
             computer.IsGpuEnabled = true;
+            computer.IsMemoryEnabled = true;
 
             computer.Open();
             computer.Accept(new UpdateVisitor());
@@ -97,6 +100,13 @@ namespace HWMonitorWebApi.Services
                             dataItem.CPUTemp = Convert.ToInt32(sensor.Value).ToString();
                         }
                     }
+                    if (item.HardwareType==HardwareType.Memory)
+                    {
+                        if (sensor.SensorType==SensorType.Data && sensor.Name == "Memory Available")
+                        {
+                            dataItem.RAM = Convert.ToInt32(sensor.Value).ToString();
+                        }
+                    }
                     if (item.HardwareType == HardwareType.GpuNvidia)
                     {
                         if (sensor.SensorType == SensorType.Temperature && sensor.Name == "GPU Core")
@@ -117,7 +127,11 @@ namespace HWMonitorWebApi.Services
                         }
                         if (sensor.SensorType == SensorType.Power && sensor.Name == "GPU Package")
                         {
-                            dataItem.GPUPower = sensor.Value.ToString();
+                            dataItem.GPUPower = Convert.ToInt32(sensor.Value).ToString();
+                        }
+                        if (sensor.SensorType == SensorType.SmallData && sensor.Name == "GPU Memory Free")
+                        {
+                            dataItem.Gram = sensor.Value.ToString();
                         }
                     }
                    

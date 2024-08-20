@@ -47,7 +47,7 @@ string GetHtmlContent()
         .card {
             background-color: #1e1e1e;
             border-radius: 10px;
-            padding: 10px 0;
+            padding: 15px 0;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             text-align: center;
             display: flex;
@@ -56,7 +56,7 @@ string GetHtmlContent()
         }
         .card h2 {
             margin: 0;
-            font-size: 16px;
+            font-size: 15px;
             color: #00ffff;
         }
         .card .value-container {
@@ -66,7 +66,7 @@ string GetHtmlContent()
             margin-top: 5px;
         }
         .card .value {
-            font-size: 20px;
+            font-size: 25px;
             font-weight: bold;
             color: #ffffff; /* Static color */
         }
@@ -170,6 +170,8 @@ string GetHtmlContent()
                 updateCard('gpu-fan2', data.gpuFan2, 'RPM');
                 updateCard('system-fan1', data.systemFan1, 'RPM');
                 updateCard('system-fan2', data.systemFan2, 'RPM');
+                updateCard('ram', data.ram, 'GB');
+                updateCard('gpu-memory', data.gram, 'GB');
             });
         });
     </script>
@@ -201,16 +203,40 @@ string GetHtmlContent()
                 <span class=""value dynamic-color"">--</span><span class=""unit"">°C</span>
             </div>
         </div>
-        <div class=""card"" id=""gpu-power"">
-            <h2>GPU Power</h2>
+        <div class=""card"" id=""ram"">
+            <h2>RAM</h2>
             <div class=""value-container"">
-                <span class=""value"">--</span><span class=""unit"">W</span>
+                <span class=""value"">--</span><span class=""unit"">GB</span>
             </div>
-        </div>
+        </div>       
         <div class=""card"" id=""cpu-fan"">
             <h2>CPU Fan</h2>
             <div class=""value-container"">
                 <span class=""value"">--</span><span class=""unit"">RPM</span>
+            </div>
+        </div>
+         <div class=""card"" id=""system-fan1"">
+            <h2>System Fan 1</h2>
+            <div class=""value-container"">
+                <span class=""value"">--</span><span class=""unit"">RPM</span>
+            </div>
+        </div>
+        <div class=""card"" id=""system-fan2"">
+            <h2>System Fan 2</h2>
+            <div class=""value-container"">
+                <span class=""value"">--</span><span class=""unit"">RPM</span>
+            </div>
+        </div>
+        <div class=""card"" id=""gpu-memory"">
+            <h2>GPU Memory</h2>
+            <div class=""value-container"">
+                <span class=""value"">--</span><span class=""unit"">GB</span>
+            </div>
+        </div>
+        <div class=""card"" id=""gpu-power"">
+            <h2>GPU Power</h2>
+            <div class=""value-container"">
+                <span class=""value"">--</span><span class=""unit"">W</span>
             </div>
         </div>
         <div class=""card"" id=""gpu-fan1"">
@@ -224,19 +250,7 @@ string GetHtmlContent()
             <div class=""value-container"">
                 <span class=""value"">--</span><span class=""unit"">RPM</span>
             </div>
-        </div>
-        <div class=""card"" id=""system-fan1"">
-            <h2>System Fan 1</h2>
-            <div class=""value-container"">
-                <span class=""value"">--</span><span class=""unit"">RPM</span>
-            </div>
-        </div>
-        <div class=""card"" id=""system-fan2"">
-            <h2>System Fan 2</h2>
-            <div class=""value-container"">
-                <span class=""value"">--</span><span class=""unit"">RPM</span>
-            </div>
-        </div>
+        </div> 
     </div>
 </body>
 </html>";
