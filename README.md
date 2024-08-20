@@ -14,7 +14,8 @@
   
 ## Use Cases
 - **Dedicated Monitoring Device**: Turn any device, such as an old mobile phone or tablet, into a dedicated hardware monitoring device.
-- ![image](https://github.com/user-attachments/assets/9049e760-df5d-4b8e-984a-5fdf9e897721)
+  ![image](https://github.com/user-attachments/assets/c6708343-e977-43aa-b6e3-ef44a18f68d9)
+
 
 - **Remote Monitoring**: Keep an eye on your computer's hardware performance from anywhere in your home or office.
 
