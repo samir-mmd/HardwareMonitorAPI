@@ -18,7 +18,7 @@ namespace HWMonitorWebApi.Services
         public string? GPUFan1 { get; set; }
         public string? GPUFan2 { get; set; }
         public string? Gram { get; set; }
-        public string? RAM  { get; set; }
+        public string? RAM { get; set; }
     }
 
     public class UpdateVisitor : IVisitor
@@ -102,7 +102,7 @@ namespace HWMonitorWebApi.Services
                     }
                     if (item.HardwareType==HardwareType.Memory)
                     {
-                        if (sensor.SensorType==SensorType.Data && sensor.Name == "Memory Available")
+                        if (sensor.SensorType==SensorType.Load && sensor.Name == "Memory")
                         {
                             dataItem.RAM = Convert.ToInt32(sensor.Value).ToString();
                         }
@@ -129,9 +129,9 @@ namespace HWMonitorWebApi.Services
                         {
                             dataItem.GPUPower = Convert.ToInt32(sensor.Value).ToString();
                         }
-                        if (sensor.SensorType == SensorType.SmallData && sensor.Name == "GPU Memory Free")
+                        if (sensor.SensorType == SensorType.Load && sensor.Name == "GPU Memory")
                         {
-                            dataItem.Gram = sensor.Value.ToString();
+                            dataItem.Gram = Convert.ToInt32(sensor.Value).ToString();
                         }
                     }
                    

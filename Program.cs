@@ -170,8 +170,8 @@ string GetHtmlContent()
                 updateCard('gpu-fan2', data.gpuFan2, 'RPM');
                 updateCard('system-fan1', data.systemFan1, 'RPM');
                 updateCard('system-fan2', data.systemFan2, 'RPM');
-                updateCard('ram', data.ram, 'GB');
-                updateCard('gpu-memory', data.gram, 'GB');
+                updateCard('ram', data.ram, '%');
+                updateCard('gpu-memory', data.gram, '%');
             });
         });
     </script>
