@@ -1,0 +1,6 @@
+@HWMonitorWebApi_HostAddress = http://localhost:5210
+
+GET {{HWMonitorWebApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
