@@ -28,7 +28,7 @@ string GetHtmlContent()
     <meta name=""viewport"" content=""width=device-width, initial-scale=1.0"">
     <style>
         body {
-            background-color: #121212;
+            background-color: #000000;
             color: #ffffff;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             display: flex;
